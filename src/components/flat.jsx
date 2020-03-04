@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Flat extends Component{
+class Flat extends Component {
 
   handleclick = () => {
     this.props.selectFlat(this.props.index);
@@ -8,8 +8,9 @@ class Flat extends Component{
 
   render(){
     return (
-      <div className="card" style={{ backgroundImage: `url('${ this.props.flat.imageUrl }')` }}>
-        <div className="card-category">
+      <div className={`card${this.props.selected ? ' active' : ''}`}
+      style = {{backgroundImage: `url('${ this.props.flat.imageUrl }')`}} >
+      <div className="card-category">
           {this.props.flat.price} {this.props.flat.priceCurrency}
         </div>
         <div className="card-description">
